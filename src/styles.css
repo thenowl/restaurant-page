@@ -3,6 +3,107 @@
   src: url("./Autography.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "AlphaBrights";
+  src: url("./AlphaBrights.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-BlackItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-ThinItalic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -35,13 +136,14 @@ footer {
 
 header {
   flex: 1;
-  border-bottom: 5px solid goldenrod;
+  border-bottom: 3px solid goldenrod;
   justify-content: flex-end;
 }
 
 h1 {
   font-size: 4rem;
   letter-spacing: 1rem;
+  line-height: 6rem;
   font-weight: 500;
 
   background-image: radial-gradient(rgb(17, 17, 17), transparent);
@@ -53,23 +155,7 @@ h1 {
   border-top-right-radius: 2rem;
 
   padding: 0 60px;
-  margin: 20px 0;
-}
-
-nav button {
-  padding: 10px 20px;
-  border-radius: 2rem;
-
-  margin-bottom: 20px;
-}
-
-footer {
-  font-size: 1.5rem;
-  letter-spacing: 0.25rem;
-  color: ;
-  flex: 0.5;
-  border-top: 5px solid goldenrod;
-  justify-content: center;
+  margin: 20px 0 30px 0;
 }
 
 nav {
@@ -82,6 +168,54 @@ nav {
   max-width: 1400px;
 }
 
+nav button {
+  font-family: Roboto;
+  font-size: 1.1rem;
+  color: goldenrod;
+  background: rgb(17, 17, 17);
+  border: 1px solid rgba(218, 165, 32, 0.5);
+
+  padding: 10px 20px;
+  border-radius: 2rem;
+
+  margin-bottom: 20px;
+}
+
 .content {
   flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: rgba(17, 17, 17, 0.3);
+
+  padding: 40px 0;
+}
+
+.headlineContainer {
+  color: goldenrod;
+  text-align: center;
+}
+
+.greeting {
+  font-family: AlphaBrights;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 5rem;
+}
+
+.restaurantName {
+  font-family: Autography;
+  font-size: 8rem;
+  letter-spacing: 1rem;
+  line-height: 4rem;
+  font-weight: 500;
+}
+
+footer {
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  flex: 0.5;
+  border-top: 3px solid goldenrod;
+  justify-content: center;
 }
