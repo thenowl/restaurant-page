@@ -311,8 +311,8 @@ nav button:hover::after {
 }
 
 .menu-page-container h3 {
-  font-family: Autography;
-  font-size: 2rem;
+  font-family: Roboto;
+  font-size: 1.3rem;
   font-weight: 500;
   line-height: 3rem;
 }
@@ -328,7 +328,7 @@ nav button:hover::after {
 .dish-description,
 .dish-price {
   font-family: Roboto;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .dish-description {
@@ -398,6 +398,104 @@ nav button:hover::after {
   position: absolute;
   bottom: -50px;
   right: 60px;
+}
+
+.contact-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  font-family: Roboto;
+  font-size: 1.2rem;
+  line-height: 2rem;
+
+  height: 100%;
+  width: 100%;
+}
+
+.contact-page-container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-text1 {
+  margin-bottom: 20px;
+}
+
+.contact-text2 {
+  margin-top: 70px;
+}
+
+.telephone-container,
+.email-container1 {
+  position: relative;
+  width: 400px;
+}
+
+.telephone,
+.telephone-number,
+.mail,
+.mail-address {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.telephone-number,
+.mail-address {
+  position: absolute;
+  right: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 400px;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+form > div input,
+form > div textarea {
+  color: whitesmoke;
+  background: rgba(17, 17, 17, 0.5);
+  border: 1px solid goldenrod;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+form > div input {
+  width: 60%;
+}
+
+form > div:last-child {
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+form button {
+  align-self: flex-end;
+
+  font-family: inherit;
+  color: goldenrod;
+  background: rgb(17, 17, 17);
+  border: 1px solid goldenrod;
+  border-radius: 1rem;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+form button:hover {
+  scale: 1.1;
 }
 
 footer {

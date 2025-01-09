@@ -47,13 +47,12 @@ import { contactPage } from "./contactPage.js";
   footer.appendChild(footerText);
 
   const picturesCredit = document.createElement("p");
-  picturesCredit.innerHTML = `Pictures taken from <a href="https://www.freepik.com/" target="_blank">Freepik</a>`;
+  picturesCredit.innerHTML = `Image taken from <a href="https://www.freepik.com/" target="_blank">Freepik</a>`;
   picturesCredit.classList.add("picture-credit");
   footer.appendChild(picturesCredit);
   body.appendChild(footer);
 
-  // content.appendChild(homePage());
-  content.appendChild(aboutPage());
+  content.appendChild(homePage());
 
   nav.addEventListener("click", switchPages);
 

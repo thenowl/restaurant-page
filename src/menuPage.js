@@ -32,6 +32,35 @@ export function menuPage() {
   dessert.appendChild(dessertContent);
   menuPageContainer.appendChild(dessert);
 
+  // MAP DISHES' KEYS TO CORRESPONDING ELEMENTS AND SORT BY TYPE:
+
+  menu.currentMenu.map((dish) => {
+    const dishContainer = document.createElement("div");
+    dishContainer.classList.add("dish-container");
+
+    const dishName = document.createElement("h3");
+    dishName.textContent = `${dish.dishName}`;
+    dishContainer.appendChild(dishName);
+
+    const dishDescription = document.createElement("p");
+    dishDescription.classList.add("dish-description");
+    dishDescription.textContent = `${dish.description}`;
+    dishContainer.appendChild(dishDescription);
+
+    const dishPrice = document.createElement("p");
+    dishPrice.classList.add("dish-price");
+    dishPrice.textContent = `${dish.price}`;
+    dishContainer.appendChild(dishPrice);
+
+    dish.type == "starters"
+      ? startersContent.appendChild(dishContainer)
+      : dish.type == "main-course"
+      ? mainCourseContent.appendChild(dishContainer)
+      : dessertContent.appendChild(dishContainer);
+  });
+
+  // EVENT LISTENER FOR OPENING/CLOSING MENU SECTIONS:
+
   let startersVisibility = false;
   let mainCourseVisibility = false;
   let dessertVisibility = false;
@@ -92,33 +121,6 @@ export function menuPage() {
     }
   });
 
-  // MAP DISHES' KEYS TO CORRESPONDING ELEMENTS AND SORT BY TYPE:
-
-  menu.currentMenu.map((dish) => {
-    const dishContainer = document.createElement("div");
-    dishContainer.classList.add("dish-container");
-
-    const dishName = document.createElement("h3");
-    dishName.textContent = `${dish.dishName}`;
-    dishContainer.appendChild(dishName);
-
-    const dishDescription = document.createElement("p");
-    dishDescription.classList.add("dish-description");
-    dishDescription.textContent = `${dish.description}`;
-    dishContainer.appendChild(dishDescription);
-
-    const dishPrice = document.createElement("p");
-    dishPrice.classList.add("dish-price");
-    dishPrice.textContent = `${dish.price}`;
-    dishContainer.appendChild(dishPrice);
-
-    dish.type == "starters"
-      ? startersContent.appendChild(dishContainer)
-      : dish.type == "main-course"
-      ? mainCourseContent.appendChild(dishContainer)
-      : dessertContent.appendChild(dishContainer);
-  });
-
   return menuPageContainer;
 }
 
@@ -157,7 +159,7 @@ menu.addDish(mushroomSalad);
 const friedTempuraShrimps = new Dish(
   "Fried Tempura Shrimps",
   "starters",
-  "served with salad",
+  "Served with salad",
   "21.80€"
 );
 menu.addDish(friedTempuraShrimps);
@@ -165,7 +167,7 @@ menu.addDish(friedTempuraShrimps);
 const beefCarpaccio = new Dish(
   "Beef Carpaccio",
   "starters",
-  "served with freshly grated French hard cheese",
+  "Served with freshly grated French hard cheese",
   "19.80€"
 );
 menu.addDish(beefCarpaccio);
@@ -175,7 +177,7 @@ menu.addDish(beefCarpaccio);
 const cornfedChickenBreast = new Dish(
   "Corn-fed Chicken Breast",
   "main-course",
-  "served with mashed potatoes & truffle sauce",
+  "Served with mashed potatoes & truffle sauce",
   "29.80€"
 );
 menu.addDish(cornfedChickenBreast);
@@ -183,7 +185,7 @@ menu.addDish(cornfedChickenBreast);
 const roastedDuckLegs = new Dish(
   "Roasted Duck Legs",
   "main-course",
-  "served with orange sauce, red cabbage & mashed potatoes",
+  "Served with orange sauce, red cabbage & mashed potatoes",
   "29.50€"
 );
 menu.addDish(roastedDuckLegs);
@@ -191,7 +193,7 @@ menu.addDish(roastedDuckLegs);
 const lambShank = new Dish(
   "Lamb Shank",
   "main-course",
-  "served with vegetables & mashed potatoes",
+  "Served with vegetables & mashed potatoes",
   "30.50€"
 );
 menu.addDish(lambShank);
@@ -201,7 +203,7 @@ menu.addDish(lambShank);
 const cremeBrulee = new Dish(
   "Crème Brûlée",
   "dessert",
-  "served with  caramelized  brown  sugar",
+  "Served with  caramelized  brown  sugar",
   "9.50€"
 );
 menu.addDish(cremeBrulee);
@@ -209,7 +211,7 @@ menu.addDish(cremeBrulee);
 const chocolateSouffle = new Dish(
   "Chocolate Soufflé",
   "dessert",
-  "served warm with scoop of vanilla ice cream",
+  "Served warm with scoop of vanilla ice cream",
   "14.50€"
 );
 menu.addDish(chocolateSouffle);
@@ -217,7 +219,7 @@ menu.addDish(chocolateSouffle);
 const chocolateMousse = new Dish(
   "Chocolate Mousse Variety",
   "dessert",
-  "variety of dark and white chocolate, served with whipped cream",
+  "Variety of dark and white chocolate, served with whipped cream",
   "12.50€"
 );
 menu.addDish(chocolateMousse);
