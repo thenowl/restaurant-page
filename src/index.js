@@ -1,5 +1,8 @@
 import "./styles.css";
-import { initPageLoad } from "./initPageLoad.js";
+import { homePage } from "./homePage.js";
+import { menuPage, menu } from "./menuPage.js";
+import { aboutPage } from "./aboutPage.js";
+import { contactPage } from "./contactPage.js";
 
 (function pageStatics() {
   const body = document.body;
@@ -42,7 +45,31 @@ import { initPageLoad } from "./initPageLoad.js";
   const footerText = document.createElement("p");
   footerText.textContent = "Created by TheNowl";
   footer.appendChild(footerText);
-  body.appendChild(footer);
-})();
 
-initPageLoad();
+  const picturesCredit = document.createElement("p");
+  picturesCredit.innerHTML = `Pictures taken from <a href="https://www.freepik.com/" target="_blank">Freepik</a>`;
+  picturesCredit.classList.add("picture-credit");
+  footer.appendChild(picturesCredit);
+  body.appendChild(footer);
+
+  // content.appendChild(homePage());
+  content.appendChild(aboutPage());
+
+  nav.addEventListener("click", switchPages);
+
+  function switchPages(e) {
+    let pageSelection = e.target.id;
+
+    if (!pageSelection) return;
+
+    content.textContent = "";
+
+    pageSelection == "homeButton"
+      ? content.appendChild(homePage())
+      : pageSelection == "menuButton"
+      ? content.appendChild(menuPage())
+      : pageSelection == "aboutButton"
+      ? content.appendChild(aboutPage())
+      : content.appendChild(contactPage());
+  }
+})();

@@ -1,5 +1,6 @@
-export function initPageLoad() {
-  const contentContainer = document.querySelector("#content");
+export function homePage() {
+  const homePageContainer = document.createElement("div");
+  homePageContainer.classList.add("home-page-container");
 
   const headlineContainer = document.createElement("div");
   headlineContainer.classList.add("headlineContainer");
@@ -13,15 +14,17 @@ export function initPageLoad() {
   restaurantName.classList.add("restaurantName");
   restaurantName.textContent = "peu à peu";
   headlineContainer.appendChild(restaurantName);
-  contentContainer.appendChild(headlineContainer);
+  homePageContainer.appendChild(headlineContainer);
 
   const descriptionText = document.createElement("p");
   descriptionText.classList.add("description-text");
   descriptionText.textContent = "A place for lovers of French cuisine.";
-  contentContainer.appendChild(descriptionText);
+  homePageContainer.appendChild(descriptionText);
 
   const hookLine = document.createElement("p");
   hookLine.classList.add("hook-line");
   hookLine.innerText = "Rooted in tradition... touched by the modern...";
-  contentContainer.appendChild(hookLine);
+  homePageContainer.appendChild(hookLine);
+
+  return homePageContainer;
 }
